@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <center>
+      <h2>Hey there</h2>
+      <br /><br /><br />
+      <button id="zorar">Click me!</button>
+    </center>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>
+      $('#zorar').on('click', function(){
+          $.ajax({
+            method: "POST",
+            url: "/start",
+            data: { grid : "0,1,2,3,4,5,6,7,8" }
+          })
+            .done(function( msg ) {
+                alert(msg);
+            });
+      })
+
+
+    </script>
+  </body>
+</html>
